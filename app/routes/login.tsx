@@ -1,14 +1,15 @@
 // app/routes/login.tsx
 import { Layout } from '~/components/layout'
+import { useState } from 'react'
+import { FormField } from '~/components/form-field'
+
 import {
     Flex,
     Box,
     FormControl,
     FormLabel,
     Input,
-    Checkbox,
     Stack,
-    Link,
     Button,
     Heading,
     Text,
@@ -16,6 +17,17 @@ import {
   } from '@chakra-ui/react';
   
   export default function Login() {
+
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+      })
+    
+      // Updates the form data when an input changes
+      const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>, field: string) => {
+        setFormData(form => ({ ...form, [field]: event.target.value }))
+      }
+
     return (
       <Flex
         minH={'100vh'}
@@ -41,10 +53,12 @@ import {
                 <FormLabel>Email address</FormLabel>
                 <Input type="email" />
               </FormControl>
+
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
                 <Input type="password" />
               </FormControl>
+
               <Stack spacing={10}>
                 <Button
 bgGradient='linear(to-l, #7928CA, #FF0080)' color={'white'}
