@@ -49,22 +49,23 @@ import {
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
+
+
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
                 <Input type="email" />
               </FormControl>
+
 
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
                 <Input type="password" />
               </FormControl>
 
+
+
               <Stack spacing={10}>
-                <Button
-bgGradient='linear(to-l, #7928CA, #FF0080)' color={'white'}
-                  _hover={{
-                    bg: 'purple',
-                  }}>
+                <Button bgGradient='linear(to-l, #7928CA, #FF0080)' color={'white'} _hover={{ bg: 'purple',}}>
                   Sign in
                 </Button>
               </Stack>
